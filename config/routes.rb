@@ -1,4 +1,6 @@
 Sabertooth::Application.routes.draw do
+  resources :assets
+
   resources :items
 
   authenticated :user do

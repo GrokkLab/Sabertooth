@@ -1,0 +1,27 @@
+%h1 Listing assets
+
+%table
+  %tr
+    %th Asset code
+    %th Category
+    %th Description
+    %th Latitude
+    %th Longitude
+    %th
+    %th
+    %th
+
+  - @assets.each do |asset|
+    %tr
+      %td= asset.asset_code
+      %td= asset.category
+      %td= asset.description
+      %td= asset.latitude
+      %td= asset.longitude
+      %td= link_to 'Show', asset
+      %td= link_to 'Edit', edit_asset_path(asset)
+      %td= link_to 'Destroy', asset, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Asset', new_asset_path

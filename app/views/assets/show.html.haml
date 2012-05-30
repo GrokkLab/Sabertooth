@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Asset code:
+  = @asset.asset_code
+%p
+  %b Category:
+  = @asset.category
+%p
+  %b Description:
+  = @asset.description
+%p
+  %b Latitude:
+  = @asset.latitude
+%p
+  %b Longitude:
+  = @asset.longitude
+
+= link_to 'Edit', edit_asset_path(@asset)
+\|
+= link_to 'Back', assets_path
