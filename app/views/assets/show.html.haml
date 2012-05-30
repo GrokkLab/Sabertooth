@@ -1,21 +1,28 @@
-%p#notice= notice
+- model_class = @asset.class
+%h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Asset code:
+  %strong= model_class.human_attribute_name(:asset_code) + ':'
+  %br
   = @asset.asset_code
 %p
-  %b Category:
+  %strong= model_class.human_attribute_name(:category) + ':'
+  %br
   = @asset.category
 %p
-  %b Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @asset.description
 %p
-  %b Latitude:
+  %strong= model_class.human_attribute_name(:latitude) + ':'
+  %br
   = @asset.latitude
 %p
-  %b Longitude:
+  %strong= model_class.human_attribute_name(:longitude) + ':'
+  %br
   = @asset.longitude
 
-= link_to 'Edit', edit_asset_path(@asset)
-\|
-= link_to 'Back', assets_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), assets_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_asset_path(@asset), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), asset_path(@asset), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'
