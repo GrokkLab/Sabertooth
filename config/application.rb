@@ -20,7 +20,7 @@ module Sabertooth
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      g.view_specs false
+      g.view_specs true
       g.helper_specs false
       
     end
