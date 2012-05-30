@@ -1,4 +1,6 @@
 Sabertooth::Application.routes.draw do
+  resources :routines
+
   resources :assets
 
   resources :items

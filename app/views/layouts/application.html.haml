@@ -22,5 +22,11 @@
           .row
             .span12
               = render 'layouts/messages'
+              -#= yield
+          .row
+            .span3
+              = render 'layouts/sidebar'
+            .span9
               = yield
           %footer
+            %p &copy; gRokkLab 2012
