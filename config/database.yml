@@ -1,21 +1,10 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#development:
-#  adapter: sqlite3
-#  database: db/development.sqlite3
-#  pool: 5
-#  timeout: 5000
-
 development:
   adapter: postgresql
   encoding: unicode
-  database: sabertooth-dev
+  database: 10AnC-dev
   pool: 5
-  username: sabertooth
-  password: sabertooth
+  username: 10AnC
+  password: 10AnC
   host: localhost
   port: 5432
 
@@ -23,27 +12,26 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-#test: &test
-#  adapter: sqlite3
-#  database: db/test.sqlite3
-#  pool: 5
-#  timeout: 5000
-
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: sabertooth-test
+  database: 10AnC-test
   pool: 5
-  username: sabertooth
-  password: sabertooth
+  username: 10AnC
+  password: 10AnC
   host: localhost
   port: 5432
 
-#production:
-#  adapter: sqlite3
-#  database: db/production.sqlite3
-#  pool: 5
-#  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: 10AnC-prod
+  pool: 5
+  username: 10AnC
+  password: 10AnC
+  host: localhost
+  port: 5432
 
 cucumber:
   <<: *test
