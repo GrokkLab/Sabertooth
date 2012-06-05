@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   def handle_subdomain
     subdomain =  request.subdomain
 
-    search_path = subdomain.empty? ? %{"$user", public} : [subdomain.to_s, "public"].compact.join(",")
+    is_empty_or_www = subdomain.empty? || subdomain == "www"
+    search_path = is_empty_or_www ? %{"$user", public} : [subdomain.to_s, "public"].compact.join(",")
     puts "search_path = "+search_path
 
     connection = ActiveRecord::Base.connection
