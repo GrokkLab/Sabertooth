@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def handle_subdomain
-    #puts "user signin = "+new_user_session_path
-
     subdomain =  request.subdomain
 
     is_empty_or_www = subdomain.empty? || subdomain == "www"
@@ -18,5 +16,9 @@ class ApplicationController < ActionController::Base
 
     connection = ActiveRecord::Base.connection
     ActiveRecord::Base.connection.schema_search_path = search_path
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    new_user_session_path
   end
 end

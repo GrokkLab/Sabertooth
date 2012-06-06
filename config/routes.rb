@@ -5,24 +5,15 @@ Sabertooth::Application.routes.draw do
 
   resources :items
 
-  #root :to => "devise/session#new"
-
   devise_for :users
-  root :to => 'home#index'
 
-  #authenticated :user do
-  #  root :to => 'home#index'
-  #end
-  ##root :to => "sessions#new"
-  #
-  #unauthenticated :user do
-  #  #root :to => redirect("/users/sign_in")
-  #  root :to => 'home#index2'
-  #  #root :to => 'user_session#new'
-  #end
+  authenticated :user do
+    root :to => 'home#index'
+  end
 
-  #match 'foo/bar' => {:controller=>"devise/sessions", :action=>"new"}
-  #match 'devise/' => "devise/sessions#new"
+  unauthenticated :user do
+    root :to => redirect("/users/sign_in")
+  end
 
   resources :users, :only => [:show, :index]
 end
