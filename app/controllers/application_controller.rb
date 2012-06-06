@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
 
     is_empty_or_www = subdomain.empty? || subdomain == "www"
     search_path = is_empty_or_www ? %{"$user", public} : [subdomain.to_s, "public"].compact.join(",")
-    puts "search_path = "+search_path
 
     connection = ActiveRecord::Base.connection
     ActiveRecord::Base.connection.schema_search_path = search_path
