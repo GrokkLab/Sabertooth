@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def handle_subdomain
+    #puts "user signin = "+new_user_session_path
+
     subdomain =  request.subdomain
 
     is_empty_or_www = subdomain.empty? || subdomain == "www"
