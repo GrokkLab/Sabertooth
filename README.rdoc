@@ -1,4 +1,4 @@
-== Tenancy : A multi-tenancy app
+== Sabertooth : A multi-tenancy app
     A-identifies tenants via subdomain (ie acme.grokklab.com)
     B-implmeents tenant data seperation via Postgres schema's
     C-Uses Devise, CanCan and Rolify for authentication and authorization
@@ -7,11 +7,11 @@
 
 == Getting Started
 
-1. git clone git@github.com:GrokkLab/10AnC.git
+1. git clone git@github.com:GrokkLab/Sabertooth.git
 
 2. bundle install
 
-3. create login role Tenancy in postgres
+3. create login role Sabertooth in postgres
 
 4. rake db:create
 
@@ -24,8 +24,8 @@
 
 == Now for some multi-tenancy
 
-Tenancy works just fine as a single tenant app, but maybe you need to support 2 or 3 or eleventeen
-different organizations. No problem.  Tenancy comes with some easy-peasy rake tools to do just that.
+Sabertooth works just fine as a single tenant app, but maybe you need to support 2 or 3 or eleventeen
+different organizations. No problem.  Sabertooth comes with some easy-peasy rake tools to do just that.
 
 Spose your new tenant is named 'acme', then...
   rake tenant:reset TENANT_NAME=acme

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Tenancy::Application.load_tasks
+Sabertooth::Application.load_tasks

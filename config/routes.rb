@@ -1,4 +1,4 @@
-Tenancy::Application.routes.draw do
+Sabertooth::Application.routes.draw do
   resources :routines
 
   resources :assets

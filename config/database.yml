@@ -1,10 +1,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: 10AnC-dev
+  database: Sabertooth-dev
   pool: 5
-  username: 10AnC
-  password: 10AnC
+  username: Sabertooth
+  password: Sabertooth
   host: localhost
   port: 5432
 
@@ -15,10 +15,10 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: 10AnC-test
+  database: Sabertooth-test
   pool: 5
-  username: 10AnC
-  password: 10AnC
+  username: Sabertooth
+  password: Sabertooth
   host: localhost
   port: 5432
 
@@ -26,10 +26,10 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: 10AnC-prod
+  database: Sabertooth-prod
   pool: 5
-  username: 10AnC
-  password: 10AnC
+  username: Sabertooth
+  password: Sabertooth
   host: localhost
   port: 5432
 
