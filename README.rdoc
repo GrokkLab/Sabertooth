@@ -1,4 +1,4 @@
-== 10AnC : A multi-tenancy app
+== Tenancy : A multi-tenancy app
     A-identifies tenants via subdomain (ie acme.grokklab.com)
     B-implmeents tenant data seperation via Postgres schema's
     C-Uses Devise, CanCan and Rolify for authentication and authorization
@@ -11,7 +11,7 @@
 
 2. bundle install
 
-3. create login role 10AnC in postgres
+3. create login role Tenancy in postgres
 
 4. rake db:create
 
@@ -24,8 +24,8 @@
 
 == Now for some multi-tenancy
 
-10AnC works just fine as a single tenant app, but maybe you need to support 2 or 3 or eleventeen
-different organizations. No problem.  10AnC comes with some easy-peasy rake tools to do just that.
+Tenancy works just fine as a single tenant app, but maybe you need to support 2 or 3 or eleventeen
+different organizations. No problem.  Tenancy comes with some easy-peasy rake tools to do just that.
 
 Spose your new tenant is named 'acme', then...
   rake tenant:reset TENANT_NAME=acme

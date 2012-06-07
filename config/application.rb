@@ -15,7 +15,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Sabertooth
+module Tenancy
   class Application < Rails::Application
 
     # don't generate RSpec tests for views and helpers
