@@ -6,14 +6,18 @@
         %li= link_to('Users', users_path)
         %li= link_to "Items", items_path
         %li= link_to "Routines", routines_path
-      - if current_user.has_role? :mgmt
+      - if current_user.has_role? :executive
+        %li= link_to "Reports", root_path
+      - if current_user.has_role? :manager
         %li= link_to "Items", items_path
         %li= link_to "Routines", routines_path
         %li= link_to "Issues", root_path
         %li= link_to "Work Orders", root_path
         %li= link_to "Purchase Orders", root_path
-      - if current_user.has_role? :tech
+      - if current_user.has_role? :technician
         %li= link_to "Items", items_path
         %li= link_to "Routines", routines_path
         %li= link_to "Issues", root_path
         %li= link_to "Work Orders", root_path
+      - if current_user.has_role? :user
+        %li= link_to "Issues", root_path

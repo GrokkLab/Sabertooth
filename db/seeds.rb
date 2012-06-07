@@ -12,17 +12,17 @@ puts 'New user created: ' << user.name
 user.add_role :user
 
 admn = User.create! :name => 'Kenny Blankenship', :email => 'admn@example.com', :password => 'please', :password_confirmation => 'please'
-puts 'New user created: ' << admn.name
+puts 'New admin created: ' << admn.name
 admn.add_role :admin
 
 exec = User.create! :name => 'Jeffery Templeton', :email => 'exec@example.com', :password => 'please', :password_confirmation => 'please'
-puts 'New exec created: ' << exec.name
-exec.add_role :exec
+puts 'New execuctive created: ' << exec.name
+exec.add_role :executive
 
 mgmt = User.create! :name => 'Craig Smith', :email => 'mgmt@example.com', :password => 'please', :password_confirmation => 'please'
-puts 'New mgmt created: ' << mgmt.name
-mgmt.add_role :mgmt
+puts 'New manager created: ' << mgmt.name
+mgmt.add_role :manager
 
 tech = User.create! :name => 'Doug Wilson', :email => 'tech@example.com', :password => 'please', :password_confirmation => 'please'
-puts 'New tech created: ' << tech.name
-tech.add_role :tech
+puts 'New technician created: ' << tech.name
+tech.add_role :technician
