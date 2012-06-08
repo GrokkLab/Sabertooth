@@ -6,11 +6,13 @@
   .control-group
     = f.label :category, :class => 'control-label'
     .controls
-      = f.text_field :category, :class => 'text_field'
+      -#= f.text_field :category, :class => 'text_field'
+      -#= f.select :category,  ['', 'Physical', 'Information', 'Human']
+      = f.select :category, AssetCategory.new.values.collect {|p| [p] }
   .control-group
     = f.label :description, :class => 'control-label'
     .controls
-      = f.text_area :description, :class => 'text_area'
+      = f.text_area :description, :class => 'text_area', :rows => 6
   .control-group
     = f.label :latitude, :class => 'control-label'
     .controls
