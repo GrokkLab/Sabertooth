@@ -44,5 +44,9 @@ Something like this...
 Refresh your DNS cache (for macs -> dscacheutil -flushcache) and then point your browser at
 acme.grokklab.com and you are now looking at ACME's web app.
 
-Enjoy.
+Lastly, check out the Item model!  Now an Item can have children Items, and those children can have their own children
+and so on.  In short the Item model can now represent any aribitrary tree structure with parent-child relationships.  A
+breadcrumb is shown in the header of the 'show' view which illustrates where in the heirarchy a particular Item is.
 
+
+Enjoy!
