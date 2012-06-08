@@ -19,8 +19,7 @@
 
 6. rake db:seed
 
-7. That's it!  You now have 4 logins available: user@example.com, admn@example.com, exec@example.com,
-    mgmt@example.com and tech@example.com (password is 'please' for each).  Each user gets a view specific to their role.
+7. That's it!  You now have 4 logins available: user@example.com, admn@example.com, exec@example.com, mgmt@example.com and tech@example.com (password is 'please' for each).  Each user gets a view specific to their role.
 
 
 == Now for some multi-tenancy
