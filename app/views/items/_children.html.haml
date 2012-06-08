@@ -1,5 +1,5 @@
 - model_class = Item.new.class
-%h1=t '.title', :default => model_class.model_name.human.pluralize
+%h2=t 'Child Items'
 %table.table.table-striped
   %thead
     %tr
@@ -12,7 +12,7 @@
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
-    - @items.each do |item|
+    - @item.children.each do |item|
       %tr
         %td= link_to item.id, item_path(item)
         %td= item.item_code

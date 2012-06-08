@@ -13,6 +13,18 @@ describe Item do
 
   it "should do act like a tree" do
     puts "howdy"
+    root      = Item.create("item_code" => "root")
+    child1    = root.children.create("item_code" => "child1")
+    subchild1 = child1.children.create("item_code" => "subchild1")
+
+    puts root.parent   # => nil
+    puts child1.parent.item_code # => root
+    puts root.children # => [child1]
+    root.children.each { |child|
+      puts child.item_code
+    }
+
+    puts root.children.first.children.first # => subchild1
   end
 
 end

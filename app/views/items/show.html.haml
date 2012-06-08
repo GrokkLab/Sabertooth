@@ -1,26 +1,41 @@
+%p
+  -for item in @item.ancestors.reverse
+    -#= item.item_code
+    = link_to h(item.item_code), item_path(item)
+    &gt;
+
 - model_class = @item.class
 %h1=t '.title', :default => model_class.model_name.human
 
-%p
-  %strong= model_class.human_attribute_name(:item_code) + ':'
-  %br
-  = @item.item_code
-%p
-  %strong= model_class.human_attribute_name(:category) + ':'
-  %br
-  = @item.category
-%p
-  %strong= model_class.human_attribute_name(:description) + ':'
-  %br
-  = @item.description
-%p
-  %strong= model_class.human_attribute_name(:latitude) + ':'
-  %br
-  = @item.latitude
-%p
-  %strong= model_class.human_attribute_name(:longitude) + ':'
-  %br
-  = @item.longitude
+.container-fluid
+  .row-fluid
+    .span2
+      %strong= model_class.human_attribute_name(:item_code) + ':'
+    .span4
+      = @item.item_code
+  .row-fluid
+    .span2
+      %strong= model_class.human_attribute_name(:category) + ':'
+    .span4
+      = @item.category
+  .row-fluid
+    .span2
+      %strong= model_class.human_attribute_name(:description) + ':'
+    .span4
+      = @item.description
+  .row-fluid
+    .span2
+      %strong= model_class.human_attribute_name(:latitude) + ':'
+    .span4
+      = @item.latitude
+  .row-fluid
+    .span2
+      %strong= model_class.human_attribute_name(:longitude) + ':'
+    .span4
+      = @item.longitude
+
+-unless @item.children.empty?
+  = render "children"
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), items_path, :class => 'btn'
